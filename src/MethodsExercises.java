@@ -8,7 +8,7 @@ public class MethodsExercises {
         System.out.println(multiplication(42, 69));
         System.out.println(division(42, 0));
         System.out.println(division(42, 69));
-        guessHighLow();
+        factorial();
     }
     public static int addition(int x, int y) {
         return x + y;
