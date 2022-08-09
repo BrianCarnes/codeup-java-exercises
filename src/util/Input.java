@@ -3,7 +3,7 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private final Scanner scanner;
+    private Scanner scanner;
 
     public Input(){
         this.scanner = new Scanner(System.in);
@@ -49,9 +49,10 @@ public class Input {
 
     }
 
-    public int getInt(){
+    public int getInt() {
         return getInt("Please enter an integer");
     }
+
     public int getInt(String prompt){
         System.out.println(prompt);
         String input = scanner.nextLine();
@@ -100,4 +101,6 @@ public class Input {
             return getDouble(prompt);
         }
     }
+
+
 }
