@@ -36,7 +36,7 @@ public class Input {
                 String input = scanner.nextLine();
                 number = Integer.parseInt(input);
             } catch (RuntimeException re) {
-                System.err.println("You must enter an integer.");
+                System.err.println("Enter an integer.");
                 return getInt(min,max,prompt);
             }
             if (number >= min && number <= max)
@@ -61,14 +61,14 @@ public class Input {
         try {
             number = Integer.parseInt(input);
         } catch (NumberFormatException exception) {
-            System.err.println("You must enter an integer.");
+            System.err.println("Enter an integer.");
             return getInt(prompt);
         }
         return number;
     }
 
     public double getDouble(double min,double max) {
-        return getDouble(min,max,"Please enter a number between "+min+" and "+max);
+        return getDouble(min,max,"Enter a number between "+min+" and "+max);
     }
 
     public double getDouble(double min,double max,String prompt){
@@ -80,7 +80,7 @@ public class Input {
             try {
                 number = Double.parseDouble(input);
             } catch (NumberFormatException exception) {
-                System.err.println("You must enter a number.");
+                System.err.println("Enter a number.");
                 return getDouble(min,max,prompt);
             }
             if (number >= min && number <= max)
@@ -97,10 +97,18 @@ public class Input {
         try {
             return Double.parseDouble(input);
         } catch (NumberFormatException exception) {
-            System.err.println("You must enter a number.");
+            System.err.println("Enter a number.");
             return getDouble(prompt);
         }
     }
+    public String getBinary() { return getBinary("Please enter a String");}
+    public String getBinary(String prompt) {
+        return Integer.toBinaryString(getInt(prompt));
+    }
 
+    public String getHex() { return getHex("Please enter a String");}
+    public String getHex(String prompt) {
+        return Integer.toHexString(getInt(prompt));
+    }
 
 }
